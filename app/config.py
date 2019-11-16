@@ -1,26 +1,28 @@
 class Config:
     '''
-    PArent class for all general configurations
-    '''
-    BASE_URL = 'https://newsapi.org/v2/everything?{}&apiKey={}'
-    pass
-
-class prodConfig:
-    '''
-    Child class for production configuration.
-
-    Arguments:
-    Config which is the parent class 
+    General configuration parent class
     '''
     pass
+
+
+
+class ProdConfig(Config):
+    '''
+    Production  configuration child class
+
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
+    BASE_URL ='https://newsapi.org/v2/{}?&apiKey={}'
+    pass
+
 
 class DevConfig(Config):
     '''
-    Child class for development configuration
+    Development  configuration child class
 
-     Arguments:
-    Config which is the parent class 
+    Args:
+        Config: The parent configuration class with General configuration settings
     '''
 
     DEBUG = True
-    

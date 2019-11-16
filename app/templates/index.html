@@ -1,2 +1,10 @@
-<h1>Welcome to the news show</h1>
-<h3>Read all your news online.</h3>
+
+<h1>Welcome</h1>
+
+<h3>News Sources</h3>
+<ul>
+    {% for each_local_news in sources %}
+        <li> {{each_local_news.name}} </li>
+
+    {% endfor %}
+</ul>
