@@ -6,7 +6,14 @@
     {% endfor %} -->
 
     {% for news in news_list %}
-        <li> {{news.name}} </li>
+        <!-- <li> {{news.name}} -->
+        <li> {{news.name}}
+            <a href="{{news.url}}">
+                {{news.name}}
+            </a>
+            
+        </li>
+        
     {% endfor %}
 
 {% endmacro %}

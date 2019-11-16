@@ -3,4 +3,6 @@ class News:
         self.name = name
         self.description = description
         self.url = url
+
+
         

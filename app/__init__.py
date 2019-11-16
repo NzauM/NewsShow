@@ -7,4 +7,6 @@ app = Flask(__name__,instance_relative_config = True)
 
 app.config.from_object(DevConfig)
 
+# Flask extensions initialised by pasing app
+bootstrap = Bootstrap(app)
 from app import views

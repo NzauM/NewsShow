@@ -1,6 +1,7 @@
 from app import app
 import urllib.request,json
 from .models import news
+from .models import story
 
 
 
@@ -38,3 +39,25 @@ def process_results(news_list):
        
 
     return news_results
+
+def get_newsStories(name):
+    get_news_stories = "https://newsapi.org/v2/everything?sources={}&apiKey=38d71ea0c25f44a79c92a2e370b3316a"
+    get_news_stories_Url = get_news_stories.format(sources)
+
+    with urllib.request.urlopen(get_news_stories_Url) as url:
+        stories_data = url.read()
+        stories_data_resp = json.loads(stories_data)
+
+        news_story = None
+        if stories_data_resp:
+            author = stories_data_resp.get('author')
+            title = stories_data_resp.get('title')
+            description = stories_data_resp('description')
+            image = stories_data_resp.get('urlToImage')
+            publishedAt = stories_data_resp.get('publishedAt')
+            readMore = stories_data_resp.get('url')
+
+            news_story = Story(author,title,description,image,publishedAt,readMore)
+
+    return news_story
+
