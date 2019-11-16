@@ -1,10 +1,15 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
 
+{% block content %}
 <h1>Welcome</h1>
 
 <h3>News Sources</h3>
 <ul>
-    {% for each_local_news in sources %}
+    <!-- {% for each_local_news in sources %}
         <li> {{each_local_news.name}} </li>
 
-    {% endfor %}
+    {% endfor %} -->
+    {{macro.displayNewsList(sources)}}
 </ul>
+{% endblock %}
