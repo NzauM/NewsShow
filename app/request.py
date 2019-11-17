@@ -1,18 +1,24 @@
 from app import app
 import urllib.request,json
 from .models import news
-from .models import story
+# from .models import story
 
 
 
 News = news.News
-# api_key = app.config['NEWS_API_KEY']
+# new2_news_url = "https://newsapi.org/v2/everything?sources={}&apiKey=38d71ea0c25f44a79c92a2e370b3316a"
+# new_news_url = new2_news_url.format({{news.name}})
+api_key = app.config['NEWS_API_KEY']
 
-# base_url = app.config["BASE_URL"]
+base_url = app.config["BASE_URL"]
 
 def get_news(publisher):
-    # get_news_url = base_url.format(publisher,apiKey)
+    # get_news_url = base_url.format(apiKey)
     get_news_url = "https://newsapi.org/v2/sources?&apiKey=38d71ea0c25f44a79c92a2e370b3316a"
+    
+
+
+
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
@@ -25,6 +31,7 @@ def get_news(publisher):
             news_results = process_results(news_results_list)
 
     return news_results
+
 
 
 def process_results(news_list):
@@ -40,24 +47,24 @@ def process_results(news_list):
 
     return news_results
 
-def get_newsStories(name):
-    get_news_stories = "https://newsapi.org/v2/everything?sources={}&apiKey=38d71ea0c25f44a79c92a2e370b3316a"
-    get_news_stories_Url = get_news_stories.format(sources)
+# def get_newsStories(name):
+#     get_news_stories = "https://newsapi.org/v2/everything?sources={}&apiKey={}"
+#     get_news_stories_Url = get_news_stories.format(name,apiKey)
 
-    with urllib.request.urlopen(get_news_stories_Url) as url:
-        stories_data = url.read()
-        stories_data_resp = json.loads(stories_data)
+#     with urllib.request.urlopen(get_news_stories_Url) as url:
+#         stories_data = url.read()
+#         stories_data_resp = json.loads(stories_data)
 
-        news_story = None
-        if stories_data_resp:
-            author = stories_data_resp.get('author')
-            title = stories_data_resp.get('title')
-            description = stories_data_resp('description')
-            image = stories_data_resp.get('urlToImage')
-            publishedAt = stories_data_resp.get('publishedAt')
-            readMore = stories_data_resp.get('url')
+#         news_story = None
+#         if stories_data_resp:
+#             author = stories_data_resp.get('author')
+#             title = stories_data_resp.get('title')
+#             description = stories_data_resp('description')
+#             image = stories_data_resp.get('urlToImage')
+#             publishedAt = stories_data_resp.get('publishedAt')
+#             readMore = stories_data_resp.get('url')
 
-            news_story = Story(author,title,description,image,publishedAt,readMore)
+#             news_story = Story(author,title,description,image,publishedAt,readMore)
 
-    return news_story
+#     return news_story
 

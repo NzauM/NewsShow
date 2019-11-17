@@ -6,20 +6,20 @@ class Config:
 
 
 
-class ProdConfig(Config):
+class DevConfig(Config):
     '''
-    Production  configuration child class
+     Development  configuration child class
 
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    BASE_URL ='https://newsapi.org/v2/{}?&apiKey={}'
+    BASE_URL ='https://newsapi.org/v2sources?&apiKey={}'
     pass
 
 
-class DevConfig(Config):
+class ProdConfig(Config):
     '''
-    Development  configuration child class
+    Production configuration child class
 
     Args:
         Config: The parent configuration class with General configuration settings
