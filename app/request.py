@@ -1,11 +1,13 @@
 from app import app
 import urllib.request,json
 from .models import news
-# from .models import story
+from .models import articles
 
 
 
 News = news.News
+Articles = articles.Articles
+
 # new2_news_url = "https://newsapi.org/v2/everything?sources={}&apiKey=38d71ea0c25f44a79c92a2e370b3316a"
 # new_news_url = new2_news_url.format({{news.name}})
 api_key = app.config['NEWS_API_KEY']
@@ -39,7 +41,7 @@ def process_results(news_list):
     for news_item in news_list:
         name = news_item.get('name')
         description = news_item.get('description')
-        url = news_item.get('url')
+        url = news_item.get('id')
         results = News(name,description,url)
         news_results.append(results)
 
@@ -47,24 +49,63 @@ def process_results(news_list):
 
     return news_results
 
-# def get_newsStories(name):
-#     get_news_stories = "https://newsapi.org/v2/everything?sources={}&apiKey={}"
-#     get_news_stories_Url = get_news_stories.format(name,apiKey)
+def get_articles(source_id):
+    # article_url = "https://newsapi.org/v2/everything?sources={}&pageSize={}&apiKey={}"
+    # get_article_location_url = article_url.format(source_id,limit,api_key)
+    # get_article_location_url = "https://newsapi.org/v2/everything?sources={news.name}&apiKey=38d71ea0c25f44a79c92a2e370b3316a"
+    get_article_location_url1 ='https://newsapi.org/v2/everything?sources={}&apiKey=38d71ea0c25f44a79c92a2e370b3316a'
+    get_article_location_url = get_article_location_url1.format(source_id)
 
-#     with urllib.request.urlopen(get_news_stories_Url) as url:
-#         stories_data = url.read()
-#         stories_data_resp = json.loads(stories_data)
 
-#         news_story = None
-#         if stories_data_resp:
-#             author = stories_data_resp.get('author')
-#             title = stories_data_resp.get('title')
-#             description = stories_data_resp('description')
-#             image = stories_data_resp.get('urlToImage')
-#             publishedAt = stories_data_resp.get('publishedAt')
-#             readMore = stories_data_resp.get('url')
+    with urllib.request.urlopen(get_article_location_url) as url:
+        articles_location_data = url.read()
+        articles_location_resp = json.loads(articles_location_data)
 
-#             news_story = Story(author,title,description,image,publishedAt,readMore)
+        articles_location_results = None
+        if articles_location_resp['articles']:
+            # id = articles_location_resp.get('id')
+            # title = articles_location_resp.get('title')
+            # description = articles_location_resp.get('description')
+            # image = articles_location_resp.get('urlToImage')
+            # publishedAt = articles_location_resp.get('publishedAt')
+            # readMore = articles_location_resp.get('url')
 
-#     return news_story
+            # articles_location_results = Articles(id,title,description,image,publishedAt,readMore)
+            articles_location_list = articles_location_resp['articles']
+            articles_location_results = process_articles(articles_location_list)
 
+
+    return articles_location_results
+
+
+
+#     with urllib.request.urlopen(get_article_location_url) as url:
+#         articles_location_data = url.read()
+#         articles_location_resp = json.loads(articles_location_data)
+
+#         articles_location_results = None
+
+#         if articles_location_resp['articles']:
+#             articles_location_results1 = articles_location_resp['articles']
+#             articles_location_results = process_articles(articles_location_results1)
+
+
+#     return articles_location_results
+
+
+def process_articles(my_articles):
+    articles_location_list = []
+
+    for article in my_articles:
+        id = article.get('id')
+        title = article.get('title')
+        description = article.get('description')
+        readMore = article.get('url')
+        image = article.get('urlToImage')
+        publishedAt = article.get('publishedAt')
+
+    
+        article_source_object = Articles(id,title,description,readMore,image,publishedAt)
+        articles_location_list.append(article_source_object)
+
+    return articles_location_list
