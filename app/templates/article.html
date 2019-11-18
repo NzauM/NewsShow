@@ -8,7 +8,8 @@
 <div class="row">
     {% for art in article%}  
     <div class="col-md-4">
-    <div class="card">
+    <div class="card-group">
+    <div class="card ">
             <h5 class="card-title"><b>{{art.title}}</b></h5>
         <img src="{{art.publishedAt}}" class="card-img-top" alt="source image" width=" 400px ">
         <div class="card-body">
@@ -19,6 +20,7 @@
             <p class="card-text">Published on: {{art.readMore}} </p>
         </div>
       </div>
+    </div>
     </div>
 
 {% endfor %}
