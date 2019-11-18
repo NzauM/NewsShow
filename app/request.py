@@ -8,8 +8,7 @@ api_key = None
 base_url = None
 
 
-# new2_news_url = "https://newsapi.org/v2/everything?sources={}&apiKey=38d71ea0c25f44a79c92a2e370b3316a"
-# new_news_url = new2_news_url.format({{news.name}})
+
 
 def configure_request(app):
     global api_key,base_url
@@ -19,7 +18,7 @@ def configure_request(app):
 
 
 def get_news(publisher):
-    # get_news_url = base_url.format(apiKey)
+    
     get_news_url = "https://newsapi.org/v2/sources?&apiKey=38d71ea0c25f44a79c92a2e370b3316a"
     
 
@@ -54,9 +53,7 @@ def process_results(news_list):
     return news_results
 
 def get_articles(source_id):
-    # article_url = "https://newsapi.org/v2/everything?sources={}&pageSize={}&apiKey={}"
-    # get_article_location_url = article_url.format(source_id,limit,api_key)
-    # get_article_location_url = "https://newsapi.org/v2/everything?sources={news.name}&apiKey=38d71ea0c25f44a79c92a2e370b3316a"
+    
     get_article_location_url1 ='https://newsapi.org/v2/everything?sources={}&apiKey=38d71ea0c25f44a79c92a2e370b3316a'
     get_article_location_url = get_article_location_url1.format(source_id)
 
@@ -67,14 +64,7 @@ def get_articles(source_id):
 
         articles_location_results = None
         if articles_location_resp['articles']:
-            # id = articles_location_resp.get('id')
-            # title = articles_location_resp.get('title')
-            # description = articles_location_resp.get('description')
-            # image = articles_location_resp.get('urlToImage')
-            # publishedAt = articles_location_resp.get('publishedAt')
-            # readMore = articles_location_resp.get('url')
-
-            # articles_location_results = Articles(id,title,description,image,publishedAt,readMore)
+           
             articles_location_list = articles_location_resp['articles']
             articles_location_results = process_articles(articles_location_list)
 
@@ -83,18 +73,7 @@ def get_articles(source_id):
 
 
 
-#     with urllib.request.urlopen(get_article_location_url) as url:
-#         articles_location_data = url.read()
-#         articles_location_resp = json.loads(articles_location_data)
 
-#         articles_location_results = None
-
-#         if articles_location_resp['articles']:
-#             articles_location_results1 = articles_location_resp['articles']
-#             articles_location_results = process_articles(articles_location_results1)
-
-
-#     return articles_location_results
 
 
 def process_articles(my_articles):

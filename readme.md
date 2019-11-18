@@ -1,10 +1,10 @@
 # News-Scoop
 
-News scoop lets you read news from many news online.
+News scoop lets you read news sources from various publishers  online.
 
 ## Description
 
-News scoop is an application that lets you see news pubishers around the world.You can also choose a news publisher form which to read the news from.It also 
+News scoop is an application that lets you see news pubishers around the world.You can also choose a news publisher form which to read the news from.It also
 allows you to choose the language you can read from.
 
 ## Behaviour  Driven Development
@@ -22,8 +22,8 @@ User Requirements
 This applcation uses;
 
 -Python - For running unittests and total object manipulation
--HTML - For content display 
--CSS - For styling 
+-HTML - For content display
+-CSS - For styling
 -Bootstrap - For styling and responsiveness
 
 ## Support and contact details

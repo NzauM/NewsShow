@@ -1,16 +1,8 @@
 {% macro displayNewsList(news_list) %}
 
-    <!-- {% for each_local_news in sources %}
-        <li> {{each_local_news.name}} </li>
-
-    {% endfor %} -->
-
+    
     {% for news in news_list %}
-        <!-- <li> {{news.name}} -->
-            
-
-        
-<!-- <div class="container"> -->
+       
         <div class="col-md-4 col-sm-4">
         <div class="card">
             
@@ -33,7 +25,6 @@
 
         <style>
             .card{
-                /* box-shadow: 3px 3px 3px white; */
                 margin: 30px;
                 padding: 5px;
             }
@@ -46,14 +37,7 @@
 
     
 
-        <!-- <h3> {{news.name}} </h3>  
-        <p> {{news.description}} </p>
-            <a href="/article/{{news.id}}">
-                {{news.name}}
-                
-            </a>
-            
-         -->
+        
         
     {% endfor %}
 
