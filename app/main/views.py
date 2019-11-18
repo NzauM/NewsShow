@@ -1,8 +1,8 @@
 from flask import render_template
-from app import app
-from .request import get_news,get_articles
+from . import main
+from ..request import get_news,get_articles
 
-@app.route('/')
+@main.route('/')
 def index():
     local_news = get_news('sources')
     print(local_news)
@@ -17,7 +17,7 @@ def index():
 # 
 
 
-@app.route('/article/<id>')
+@main.route('/article/<id>')
 def article(id):
 
     article = get_articles(id)

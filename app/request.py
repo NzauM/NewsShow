@@ -1,18 +1,22 @@
-from app import app
 import urllib.request,json
-from .models import news
-from .models import articles
+from .model import News
+from .model import Articles
 
 
 
-News = news.News
-Articles = articles.Articles
+api_key = None
+base_url = None
+
 
 # new2_news_url = "https://newsapi.org/v2/everything?sources={}&apiKey=38d71ea0c25f44a79c92a2e370b3316a"
 # new_news_url = new2_news_url.format({{news.name}})
-api_key = app.config['NEWS_API_KEY']
 
-base_url = app.config["BASE_URL"]
+def configure_request(app):
+    global api_key,base_url
+    api_key = app.config['NEWS_API_KEY']
+    base_url = app.config["BASE_URL"]
+
+
 
 def get_news(publisher):
     # get_news_url = base_url.format(apiKey)
