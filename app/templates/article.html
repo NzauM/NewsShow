@@ -4,10 +4,15 @@
 {% for art in article%}
 <div class="card">
     <div class="card-body">
-        <b>{{art.title}}</b>
+        <b>{{art.title}}</b><br>
+        <img src={{art.image}} alt="wetrjhkl;rygijopk[drytfugyuhjiko">
         <p>{{art.description}}</p>
+        <p> {{art.readMore}} </p>
+        <p> {{art.publishedAt}} </p>
+       
+        
 
-        <img src="{{art.image}}" alt="">
+        
 
     </div>
 </div>
