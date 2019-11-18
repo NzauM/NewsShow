@@ -11,22 +11,40 @@
 
         
 <!-- <div class="container"> -->
+        <div class="col-md-4 col-sm-4">
         <div class="card">
-            <div class="col-md-4">
-            <div class="card_title">
+            
+            <div class="card-title">
                 <h3>{{news.name}}</h3>
             </div>
-            <div class="card_body">
-                p> {{news.description}} </p>
+            <div class="card-body">
+                 {{news.description}} </p>
             </div>
-            <div class="card_footer">
-                <a href="/article/{{news.url}}">
-                    View Articles
+            <div class="card-footer">
+                <a href="/article/{{news.url}}" class="btn btn-primary">
+                    View {{news.name}} Articles
                 </a>
             </div>
         </div>
         </div>
         </div>
+
+
+
+        <style>
+            .card{
+                /* box-shadow: 3px 3px 3px white; */
+                margin: 30px;
+                padding: 5px;
+            }
+
+            .card-title{
+                align-content: center;
+                box-shadow: 2px 2px 2px white;
+            }
+        </style>
+
+    
 
         <!-- <h3> {{news.name}} </h3>  
         <p> {{news.description}} </p>

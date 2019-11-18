@@ -4,6 +4,11 @@
 
 
 {% block content %}
+<div class="jumbotron">
+    <h1>News~Scoops</h1>
+    <h2>If it maters to you,It matters to us</h2>
+    <h3> Top Stories </h3>
+</div>
 
 <div class="row">
     {% for art in article%}  
@@ -33,6 +38,8 @@
         max-height: 450px;
         overflow:auto;
         /* max-width: 450px ; */
+        box-shadow: 3px 3px 3px white;
+        margin: 10px;
     }
 
     body{
@@ -41,6 +48,12 @@
         background-size: cover;
         background-position: center;
     }
+
+    .jumbotron{
+    background-color: transparent;
+    text-align: center;
+    padding: 15px;
+}
 </style>
 
 

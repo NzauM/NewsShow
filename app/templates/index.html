@@ -2,7 +2,12 @@
 {% import 'macros.html' as macro %}
 
 {% block content %}
-<h1>Welcome</h1>
+<div class="jumbotron">
+    <h1>News~Scoops</h1>
+    <h2>If it maters to you,It matters to us</h2>
+    <h3>News sources</h3>
+</div>
+
 <!-- 
 <div class="container">
     <div class="card">
@@ -15,7 +20,7 @@
     </div>
 </div> -->
 
-<h3>News Sources</h3>
+<!-- <h3>News Sources</h3> -->
 <ul>
     <!-- {% for each_local_news in sources %}
         <li> {{each_local_news.name}} </li>
@@ -31,6 +36,19 @@ body{
     background-repeat: repeat;
     background-size: cover;
     background-position: left;
+    /* font-family: 'Handlee', cursive; */
+    /* font-family: 'Dosis', sans-serif; */
+    /* font-family: 'Quicksand', sans-serif; */
 }
+
+.jumbotron{
+    background-color: transparent;
+    text-align: center;
+    padding: 15px;
+}
+.jumbotron > h1{
+    text-align: center;
+}
+
 </style>
 {% endblock %}
