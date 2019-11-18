@@ -104,8 +104,8 @@ def process_articles(my_articles):
         publishedAt = article.get('publishedAt')
         readMore = article.get('url')
 
-    
-        article_source_object = Articles(id,title,description,readMore,image,publishedAt)
-        articles_location_list.append(article_source_object)
+        if image:
+            article_source_object = Articles(id,title,description,readMore,image,publishedAt)
+            articles_location_list.append(article_source_object)
 
     return articles_location_list

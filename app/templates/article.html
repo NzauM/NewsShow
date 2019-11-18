@@ -1,28 +1,47 @@
 
 {% extends 'base.html' %}
+
+
+
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        {% for art in article%}
-        <div class="col-md-4">
-            <div class="card"  >
-                <div class="card-body">
-                    <b>{{art.title}}</b><br>
-                    <img src="{{art.publishedAt}}" alt="cover pic" width="350px">
-                    <p>{{art.description}}</p>
-                    <a href="{{art.image}}">Read More</a>
-                    <p> {{art.readMore}} </p>      
-                
-                        
-                
-                </div>
-            </div>
+<div class="row">
+    {% for art in article%}  
+    <div class="col-md-4">
+    <div class="card">
+            <h5 class="card-title"><b>{{art.title}}</b></h5>
+        <img src="{{art.publishedAt}}" class="card-img-top" alt="source image" width=" 400px ">
+        <div class="card-body">
+          <p class="card-text"> {{art.description}} </p>
+          <a href="{{art.image}}" class="btn btn-primary">Read More</a>
         </div>
-           
+        <div class="card-footer">
+            <p class="card-text">Published on: {{art.readMore}} </p>
+        </div>
+      </div>
     </div>
+
+{% endfor %}
 </div>
 
 
-{% endfor %}
+<style>
+    .card{
+        padding: 10px;
+        max-height: 450px;
+        overflow:auto;
+        /* max-width: 450px ; */
+    }
+
+    body{
+        background-image: url("https://www.xmple.com/wallpaper/linear-white-gradient-blue-highlight-1920x1080-c2-ffffff-87cefa-l-67-a-60-f-21.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+
+
+
+
 {% endblock %}

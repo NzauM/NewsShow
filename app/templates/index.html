@@ -22,6 +22,15 @@
 
     {% endfor %} -->
     {{macro.displayNewsList(sources)}}
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href=" {{url_for('static',filename='CSS/index.css')}} ">
 </ul>
+
+<style>
+body{
+    background-image: url("https://www.xmple.com/wallpaper/linear-white-gradient-blue-highlight-1920x1080-c2-ffffff-87cefa-l-67-a-60-f-21.svg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: left;
+}
+</style>
 {% endblock %}
