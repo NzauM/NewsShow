@@ -10,21 +10,21 @@ allows you to choose the language you can read from.
 ## Behaviour  Driven Development
 
 User Requirements
--As a user I would like to:
+  As a user I would like to:
 
--See various news sources on the homepage.
--Select a news source and see articles from the source.
--See images and descriptions and the time an article was created.
--Click on an article and read the full article
+- See various news sources on the homepage
+- Select a news source and see articles from the source.
+- See images and descriptions and the time an article was created.
+- Click on an article and read the full article
 
 ## Technologies Used
 
 This applcation uses;
 
--Python - For running unittests and total object manipulation
--HTML - For content display
--CSS - For styling
--Bootstrap - For styling and responsiveness
+- Python - For running unittests and total object manipulation
+- HTML - For content display
+- CSS - For styling
+- Bootstrap - For styling and responsiveness
 
 ## Support and contact details
 
