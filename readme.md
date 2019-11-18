@@ -12,10 +12,10 @@ allows you to choose the language you can read from.
 User Requirements
 -As a user I would like to:
 
--Create an account and login with my credentials
--Save new passwords for different accounts
--View all my saved credentials
--Delete credentials i no longer need
+-See various news sources on the homepage.
+-Select a news source and see articles from the source.
+-See images and descriptions and the time an article was created.
+-Click on an article and read the full article
 
 ## Technologies Used
 
