@@ -1,11 +1,11 @@
-# Password LOcker
+# News-Scoop
 
-A python application for saving passwords.
+News scoop lets you read news from many news online.
 
 ## Description
 
-Password Locker is an application that lets you Create an account where you can save passwords for all your applications.You can also view all your saved passwords and
-delete those you no longer need.
+News scoop is an application that lets you see news pubishers around the world.You can also choose a news publisher form which to read the news from.It also 
+allows you to choose the language you can read from.
 
 ## Behaviour  Driven Development
 
