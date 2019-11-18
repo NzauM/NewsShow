@@ -100,9 +100,9 @@ def process_articles(my_articles):
         id = article.get('id')
         title = article.get('title')
         description = article.get('description')
-        readMore = article.get('url')
-        image = article.get('urlToImage')
+        image = article.get('urlToImage')       
         publishedAt = article.get('publishedAt')
+        readMore = article.get('url')
 
     
         article_source_object = Articles(id,title,description,readMore,image,publishedAt)

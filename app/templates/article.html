@@ -1,21 +1,28 @@
 
 {% extends 'base.html' %}
 {% block content %}
-{% for art in article%}
-<div class="card">
-    <div class="card-body">
-        <b>{{art.title}}</b><br>
-        <img src={{art.image}} alt="wetrjhkl;rygijopk[drytfugyuhjiko">
-        <p>{{art.description}}</p>
-        <p> {{art.readMore}} </p>
-        <p> {{art.publishedAt}} </p>
-       
-        
 
-        
-
+<div class="container">
+    <div class="row">
+        {% for art in article%}
+        <div class="col-md-4">
+            <div class="card"  >
+                <div class="card-body">
+                    <b>{{art.title}}</b><br>
+                    <img src="{{art.publishedAt}}" alt="cover pic" width="350px">
+                    <p>{{art.description}}</p>
+                    <a href="{{art.image}}">Read More</a>
+                    <p> {{art.readMore}} </p>      
+                
+                        
+                
+                </div>
+            </div>
+        </div>
+           
     </div>
 </div>
+
 
 {% endfor %}
 {% endblock %}
