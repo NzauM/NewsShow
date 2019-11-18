@@ -22,12 +22,15 @@ User Requirements
 This applcation uses;
 
 -Python - For running unittests and total object manipulation
+-HTML - For content display 
+-CSS - For styling 
+-Bootstrap - For styling and responsiveness
 
 ## Support and contact details
 
 For any issues or contributions,please feel free to contact me on:
-<https://github.com/NzauM/Password_Locker/issues> for any issues or bug reports.
-<https://github.com/NzauM/Password_Locker./pulls> for any contributions or pull requests.
+<https://github.com/NzauM/NewsShow/issues> for any issues or bug reports.
+<https://github.com/NzauM/NewsShow/pulls> for any contributions or pull requests.
 
 ## Running unit tests
 
