@@ -21,10 +21,11 @@ User Requirements
 
 This applcation uses;
 
-- Python - For running unittests and total object manipulation
-- HTML - For content display
-- CSS - For styling
-- Bootstrap - For styling and responsiveness
+- Python
+- HTML
+- CSS
+- Bootstrap
+- Flask
 
 ## Support and contact details
 
